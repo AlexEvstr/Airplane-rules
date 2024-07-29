@@ -18,8 +18,31 @@ public class PlaneDetector : MonoBehaviour
     [SerializeField] private GameObject _portal;
     [SerializeField] private GameObject _gameOver;
 
-    private List<string> _aArticle = new List<string>{ "Wolf", "Pen", "Child", "Spoon", "Plate", "Unicorn", "Mouse", "Ruler", "Teacher", "Boy", "Pencil", "Uniform", "Cherry", "Bus"}; 
-    private List<string> _anArticle = new List<string> { "Apple", "Hour", "Orange", "Elephant", "Umbrella", "Eye", "Airplane", "Onion", "Armchair" };
+    private List<string> _aArticle = new List<string>
+    {
+    "Wolf", "Pen", "Child", "Spoon", "Plate", "Mouse", "Ruler", "Teacher", "Boy", "Pencil", "Cherry", "Bus",
+    "Dog", "Car", "Bike", "Tree", "House", "Cat", "Girl", "Book", "Chair", "Lamp", "Desk", "Table", "Phone", "Guitar", "Shirt",
+    "Cup", "Ball", "Fan", "Game", "Fish", "Bird", "Song", "Leaf", "Bottle", "Shoe", "Computer", "Notebook", "Bag", "Hat", "Carpet",
+    "Map", "Road", "Window", "Closet", "Plant", "Picture", "Mirror", "Candle", "Wall", "Brush", "Ring", "Watch",
+    "Toy", "Box", "Clock", "Couch", "Fork", "Knife", "Letter", "Folder", "Magazine", "Newspaper", "Poster", "Backpack", "Cake",
+    "Statue", "Tower", "Bridge", "Mountain", "River", "Forest", "Valley", "Shore", "Garden", "Ship", "Boat", "Plane", "Train",
+    "Rocket", "Spacecraft", "Bike", "Motorcycle", "Helicopter", "Submarine", "Taxi", "Bus", "Truck", "Pillow", "Painter", "Manager",
+    "Student", "Principal", "Piano", "Violin", "Cabinet", "Globe", "Drawer", "Calendar", "Carpet", "Ladder", "Hammer", "Nail",
+    "Screw", "Drill", "Saw", "Shovel", "Wrench", "Pliers", "Basket"
+    };
+
+    private List<string> _anArticle = new List<string>
+    {
+    "Apple", "Hour", "Orange", "Elephant", "Umbrella", "Eye", "Airplane", "Onion", "Armchair", "Igloo", "Insect", "Owl", "Iceberg",
+    "Island", "Engine", "Iron", "Octopus", "Ice cream", "Idea", "Author", "Eagle", "Eraser", "Envelope", "Ankle", "Illustration",
+    "Instrument", "Image", "Instinct", "Ostrich", "Agency", "Exam", "Exile", "Amulet", "Artist", "Invitation", "Event", "Empire",
+    "Apartment", "Armor", "Introduction", "Article", "Instance", "Experience", "Adventure", "Operation", "Advantage", "Invention",
+    "Option", "Organization", "Obstacle", "Affair", "Exhibition", "Animal", "Outline", "Operation", "Opinion", "Attitude", "Illusion",
+    "Occupation", "Output", "Activity", "Incident", "Excuse", "Experiment", "Ambition", "Investment", "Occasion", "Outcome", "Analysis",
+    "Impact", "Alternative", "Appetite", "Attempt", "Effort", "Explanation", "Application", "Agenda", "Entertainment", "Understanding",
+    "Observation", "Entity", "Anxiety", "Affection", "Obstacle", "Area", "Issue", "Application", "Arrangement", "Ambition", "Uncle",
+    "Army", "Answer", "Event", "Offer", "Advantage", "Arrangement", "Opportunity", "Outfit", "Accent", "Obligation", "Issue"
+    };
 
 
     [SerializeField] private GameObject[] _hearts;

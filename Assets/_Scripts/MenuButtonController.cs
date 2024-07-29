@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +5,8 @@ public class MenuButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject _musicOn;
     [SerializeField] private GameObject _musicOff;
+    [SerializeField] private GameObject _settignsPopup;
+    [SerializeField] private GameObject _levelsPopup;
 
     private void Start()
     {
