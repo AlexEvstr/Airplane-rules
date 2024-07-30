@@ -17,6 +17,7 @@ public class PlaneDetector : MonoBehaviour
     [SerializeField] private GameObject _wrong;
     [SerializeField] private GameObject _portal;
     [SerializeField] private GameObject _gameOver;
+    [SerializeField] private GameLevelCounter _gameLevelCounter;
 
     private List<string> _aArticle = new List<string>
     {
@@ -106,7 +107,7 @@ public class PlaneDetector : MonoBehaviour
 
     private IEnumerator ShowCorrect()
     {
-        Score.gameScore++;
+        _gameLevelCounter.IncreaseScore();
 
         _correct.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         _correct.SetActive(true);

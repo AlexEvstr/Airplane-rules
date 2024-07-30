@@ -12,7 +12,7 @@ public class ControlButton : MonoBehaviour
         _doneMark.transform.SetParent(transform);
         RectTransform rectTransform = _doneMark.GetComponent<RectTransform>();
 
-        rectTransform.anchoredPosition = new Vector2(150, 150);
+        rectTransform.anchoredPosition = new Vector2(225, 75);
     }
 
     public void SwipeBtn()
@@ -21,6 +21,6 @@ public class ControlButton : MonoBehaviour
         _doneMark.transform.SetParent(transform);
         RectTransform rectTransform = _doneMark.GetComponent<RectTransform>();
 
-        rectTransform.anchoredPosition = new Vector2(150, 150);
+        rectTransform.anchoredPosition = new Vector2(225, 75);
     }
 }
