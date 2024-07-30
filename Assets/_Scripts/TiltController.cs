@@ -9,17 +9,14 @@ public class TiltControl : MonoBehaviour
 
     void Start()
     {
-        // Запоминаем начальное положение телефона
         initialTilt = Input.acceleration.y;
     }
 
     void Update()
     {
-        // Вычисляем отклонение от начального положения
         float tilt = Input.acceleration.y - initialTilt;
         Vector3 newPosition = transform.position + Vector3.up * tilt * speed * Time.deltaTime;
 
-        // Ограничение по оси Y
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
 
         transform.position = newPosition;

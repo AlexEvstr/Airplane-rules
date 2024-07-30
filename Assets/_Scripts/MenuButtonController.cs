@@ -5,6 +5,7 @@ public class MenuButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject _musicOn;
     [SerializeField] private GameObject _musicOff;
+    [SerializeField] private GameObject _mainPopup;
     [SerializeField] private GameObject _settignsPopup;
     [SerializeField] private GameObject _levelsPopup;
 
@@ -44,5 +45,29 @@ public class MenuButtonController : MonoBehaviour
         _musicOff.SetActive(false);
         AudioListener.volume = 1;
         PlayerPrefs.SetFloat("music", 1);
+    }
+
+    public void OpenSetttings()
+    {
+        _mainPopup.SetActive(false);
+        _settignsPopup.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        _settignsPopup.SetActive(false);
+        _mainPopup.SetActive(true);
+    }
+
+    public void OpenLevels()
+    {
+        _mainPopup.SetActive(false);
+        _levelsPopup.SetActive(true);
+    }
+
+    public void CloseLevels()
+    {
+        _levelsPopup.SetActive(false);
+        _mainPopup.SetActive(true);
     }
 }

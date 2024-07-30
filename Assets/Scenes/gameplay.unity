@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 52029076}
   - component: {fileID: 52029074}
   - component: {fileID: 52029077}
+  - component: {fileID: 52029078}
   m_Layer: 0
   m_Name: plane
   m_TagString: Untagged
@@ -607,12 +608,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52029071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7819b8efee71a49d1bb115eb91628682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  minY: -4.5
+  maxY: 4.5
+--- !u!114 &52029078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52029071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85406b3a50384b71a0f0e0bcccc8c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &116313250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2836,14 @@ PrefabInstance:
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 0dc8a41118815f049b519e777f0eb41e, type: 3}
+      propertyPath: SizeModule.y.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 0dc8a41118815f049b519e777f0eb41e, type: 3}
+      propertyPath: SizeModule.z.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 19800008, guid: 0dc8a41118815f049b519e777f0eb41e, type: 3}
       propertyPath: InitialModule.startRotationX.minMaxState
       value: 3
@@ -4074,6 +4097,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779204208}
   m_CullTransparentMesh: 1
+--- !u!1 &1780106937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780106939}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1780106939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780106937}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1802224539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,3 +4644,4 @@ SceneRoots:
   - {fileID: 1288486244}
   - {fileID: 1724370799}
   - {fileID: 1316367697}
+  - {fileID: 1780106939}
