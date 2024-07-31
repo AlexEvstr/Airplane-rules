@@ -40,6 +40,6 @@ public class GameLevelCounter : MonoBehaviour
             bestLevel = LevelCurrent;
             PlayerPrefs.SetInt("LevelBest", bestLevel);
         }
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 }

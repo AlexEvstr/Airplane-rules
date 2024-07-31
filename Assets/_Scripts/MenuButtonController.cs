@@ -8,6 +8,7 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] private GameObject _mainPopup;
     [SerializeField] private GameObject _settignsPopup;
     [SerializeField] private GameObject _levelsPopup;
+    [SerializeField] private GameObject _tutorialPopup;
 
     private void Start()
     {
@@ -68,6 +69,18 @@ public class MenuButtonController : MonoBehaviour
     public void CloseLevels()
     {
         _levelsPopup.SetActive(false);
+        _mainPopup.SetActive(true);
+    }
+
+    public void OpenTutorial()
+    {
+        _mainPopup.SetActive(false);
+        _tutorialPopup.SetActive(true);
+    }
+
+    public void CloseTutorial()
+    {
+        _tutorialPopup.SetActive(false);
         _mainPopup.SetActive(true);
     }
 }

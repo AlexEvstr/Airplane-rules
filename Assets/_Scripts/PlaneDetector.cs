@@ -18,11 +18,12 @@ public class PlaneDetector : MonoBehaviour
     [SerializeField] private GameObject _portal;
     [SerializeField] private GameObject _gameOver;
     [SerializeField] private GameLevelCounter _gameLevelCounter;
+    [SerializeField] private CameraShake _cameraShakewithFade;
 
     private List<string> _aArticle = new List<string>
     {
-    "Wolf", "Pen", "Child", "Spoon", "Plate", "Mouse", "Ruler", "Teacher", "Boy", "Pencil", "Cherry", "Bus",
-    "Dog", "Car", "Bike", "Tree", "House", "Cat", "Girl", "Book", "Chair", "Lamp", "Desk", "Table", "Phone", "Guitar", "Shirt",
+    "Wolf", "Pen", "Child", "Spoon", "Plate", "Mouse", "Ruler", "Teacher", "Boy", "Pencil", "Cherry", "Bus","Dog", "Car", "Bike",
+    "Tree", "House", "Cat", "Girl", "Book", "Chair", "Lamp", "Desk", "Table", "Phone", "Guitar", "Shirt",
     "Cup", "Ball", "Fan", "Game", "Fish", "Bird", "Song", "Leaf", "Bottle", "Shoe", "Computer", "Notebook", "Bag", "Hat", "Carpet",
     "Map", "Road", "Window", "Closet", "Plant", "Picture", "Mirror", "Candle", "Wall", "Brush", "Ring", "Watch",
     "Toy", "Box", "Clock", "Couch", "Fork", "Knife", "Letter", "Folder", "Magazine", "Newspaper", "Poster", "Backpack", "Cake",
@@ -123,6 +124,7 @@ public class PlaneDetector : MonoBehaviour
 
     private IEnumerator ShowWrong()
     {
+        _cameraShakewithFade.TriggerShakeAndFade();
         _wrong.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         _wrong.SetActive(true);
         float aColor = 1f;
@@ -154,6 +156,6 @@ public class PlaneDetector : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         Destroy(portal);
         _gameOver.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 }
