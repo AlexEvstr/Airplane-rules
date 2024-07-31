@@ -198,6 +198,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9041260}
   m_CullTransparentMesh: 1
+--- !u!1 &18275540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18275541}
+  - component: {fileID: 18275543}
+  - component: {fileID: 18275542}
+  m_Layer: 5
+  m_Name: blackScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &18275541
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18275540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1982475133}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &18275542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18275540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &18275543
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18275540}
+  m_CullTransparentMesh: 1
 --- !u!1 &20196936
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &136022217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,7 +940,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 136022218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &136022218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,6 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &285107320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,7 +1304,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 285107321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &285107321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,6 +1443,18 @@ MonoBehaviour:
       - m_Target: {fileID: 292188342}
         m_TargetAssemblyTypeName: ControlButton, Assembly-CSharp
         m_MethodName: TiltBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1740,6 +1853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &357116444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,7 +1897,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 357116445}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &357116445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1981,6 +2107,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1399349809}
         m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
         m_MethodName: CloseLevels
         m_Mode: 1
         m_Arguments:
@@ -2082,6 +2220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &363407406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,7 +2264,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363407407}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &363407407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2427,6 +2578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &413894661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2470,7 +2622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 413894662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &413894662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,6 +2936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &439607460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2815,7 +2980,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 439607461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &439607461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3597,6 +3774,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &571031816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4242,6 +4431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &622319023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4285,7 +4475,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 622319020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &631943350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,6 +4541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &631943353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4382,7 +4585,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 631943354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &631943354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4474,6 +4689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &638775739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4517,7 +4733,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 638775740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &638775740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4688,6 +4916,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &652082733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4741,6 +4981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &652082736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4784,7 +5025,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 652082737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &652082737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4951,6 +5204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &737388951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4994,7 +5248,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 737388952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &737388952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5315,6 +5581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &780003314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5358,7 +5625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 780003315}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &780003315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5632,6 +5911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &812529656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5675,7 +5955,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 812529657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &812529657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5725,7 +6017,6 @@ GameObject:
   - component: {fileID: 822754835}
   - component: {fileID: 822754834}
   - component: {fileID: 822754833}
-  - component: {fileID: 822754836}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5807,102 +6098,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &822754836
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822754832}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 94d713b8811134e2489f9c57e5b65233, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &824291284
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,6 +6673,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &946232583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6948,6 +7155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1037531188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6991,7 +7199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037531189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037531189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7162,6 +7382,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1046521020
 GameObject:
   m_ObjectHideFlags: 0
@@ -7247,6 +7479,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1399349809}
         m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
         m_MethodName: CloseTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8121,6 +8365,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1185086465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8512,6 +8768,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1399349809}
         m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
         m_MethodName: OffMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8995,6 +9263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1240225517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9038,7 +9307,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1240225518}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1240225518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9340,6 +9621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1275168796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9383,7 +9665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1275168797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1275168797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9943,6 +10237,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1334174906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10200,6 +10506,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1399349810}
   - component: {fileID: 1399349809}
+  - component: {fileID: 1399349811}
+  - component: {fileID: 1399349812}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -10225,6 +10533,7 @@ MonoBehaviour:
   _settignsPopup: {fileID: 64981415}
   _levelsPopup: {fileID: 749579233}
   _tutorialPopup: {fileID: 33461988}
+  _clickSound: {fileID: 8300000, guid: 1e8b2a7bf3c334897b995f049b6f1ee6, type: 3}
 --- !u!4 &1399349810
 Transform:
   m_ObjectHideFlags: 0
@@ -10240,6 +10549,115 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1399349811
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399349808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 94d713b8811134e2489f9c57e5b65233, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1399349812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399349808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ba812666ba44177b66fd6e711f112c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackScreen: {fileID: 18275542}
 --- !u!1 &1405947711
 GameObject:
   m_ObjectHideFlags: 0
@@ -10427,6 +10845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1418347746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10470,7 +10889,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1418347747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1418347747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10637,6 +11068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1485219463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10680,7 +11112,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1485219464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1485219464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10947,6 +11391,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1507349242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11174,6 +11630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1570721863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11217,7 +11674,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1570721864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1570721864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11593,6 +12062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1607311693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11636,7 +12106,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1607311694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1607311694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11862,6 +12344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1628989686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11905,7 +12388,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1628989687}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1628989687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12565,6 +13060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1723676120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12608,7 +13104,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1723676121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1723676121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12863,6 +13371,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1399349809}
         m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
         m_MethodName: CloseLevels
@@ -13936,6 +14456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1906352316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13979,7 +14500,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1906352317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1906352317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14152,6 +14685,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949874793}
   m_CullTransparentMesh: 1
+--- !u!1 &1982475129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982475133}
+  - component: {fileID: 1982475132}
+  - component: {fileID: 1982475131}
+  - component: {fileID: 1982475130}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1982475130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982475129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1982475131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982475129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1242, y: 2688}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1982475132
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982475129}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 4
+  m_TargetDisplay: 0
+--- !u!224 &1982475133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982475129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 18275541}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1984214927
 GameObject:
   m_ObjectHideFlags: 0
@@ -14205,6 +14840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d189dac8b5441d581dc90183c28dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransition: {fileID: 1399349812}
 --- !u!114 &1984214930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14248,7 +14884,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1984214931}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984214931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14725,6 +15373,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399349809}
+        m_TargetAssemblyTypeName: MenuButtonController, Assembly-CSharp
+        m_MethodName: PlayClickClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2113710485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14907,3 +15567,4 @@ SceneRoots:
   - {fileID: 1399349810}
   - {fileID: 453655852}
   - {fileID: 840185920}
+  - {fileID: 1982475133}

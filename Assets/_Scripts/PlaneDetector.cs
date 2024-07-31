@@ -19,6 +19,7 @@ public class PlaneDetector : MonoBehaviour
     [SerializeField] private GameObject _gameOver;
     [SerializeField] private GameLevelCounter _gameLevelCounter;
     [SerializeField] private CameraShake _cameraShakewithFade;
+    [SerializeField] private GameMusicController _gameMusicController;
 
     private List<string> _aArticle = new List<string>
     {
@@ -108,6 +109,7 @@ public class PlaneDetector : MonoBehaviour
 
     private IEnumerator ShowCorrect()
     {
+        _gameMusicController.TrueSound();
         _gameLevelCounter.IncreaseScore();
 
         _correct.GetComponent<Image>().color = new Color(1, 1, 1, 1);
@@ -139,6 +141,7 @@ public class PlaneDetector : MonoBehaviour
 
     private void MinusHeart()
     {
+        _gameMusicController.FalseSound();
         _hearts[_heartIndex].SetActive(false);
         _heartIndex++;
 
@@ -154,6 +157,7 @@ public class PlaneDetector : MonoBehaviour
         portal.transform.position = new Vector3(0, -5, 0);
         QuestionMovement.QuestionSpeed = 0;
         yield return new WaitForSeconds(2.5f);
+        _gameMusicController.LoseSound();
         Destroy(portal);
         _gameOver.SetActive(true);
         //Time.timeScale = 0;

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MenuButtonController : MonoBehaviour
 {
@@ -9,10 +8,13 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] private GameObject _settignsPopup;
     [SerializeField] private GameObject _levelsPopup;
     [SerializeField] private GameObject _tutorialPopup;
+    [SerializeField] private AudioClip _clickSound;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         Time.timeScale = 1;
+        _audioSource = GetComponent<AudioSource>();
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         AudioListener.volume = PlayerPrefs.GetFloat("music", 1);
         if (AudioListener.volume == 1)
@@ -25,11 +27,6 @@ public class MenuButtonController : MonoBehaviour
             _musicOff.SetActive(true);
             _musicOn.SetActive(false);
         }
-    }
-
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("gameplay");
     }
 
     public void OffMusic()
@@ -82,5 +79,10 @@ public class MenuButtonController : MonoBehaviour
     {
         _tutorialPopup.SetActive(false);
         _mainPopup.SetActive(true);
+    }
+
+    public void PlayClickClip()
+    {
+        _audioSource.PlayOneShot(_clickSound);
     }
 }

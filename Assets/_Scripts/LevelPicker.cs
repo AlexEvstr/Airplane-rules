@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class LevelPicker : MonoBehaviour
 {
+    [SerializeField] private SceneTransition _sceneTransition;
     private Button _button;
 
     private void Start()
@@ -27,6 +28,6 @@ public class LevelPicker : MonoBehaviour
     public void GoToGame()
     {
         PlayerPrefs.SetInt("LevelCurrent", int.Parse(gameObject.name));
-        SceneManager.LoadScene("gameplay");
+        _sceneTransition.TransitionToScene("gameplay");
     }
 }

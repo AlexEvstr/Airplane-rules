@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameButtons : MonoBehaviour
 {
     [SerializeField] private GameObject _pause;
     [SerializeField] private GameObject _tutorial;
+    [SerializeField] private SceneTransition _sceneTransition;
 
     private void Start()
     {
@@ -29,12 +29,12 @@ public class GameButtons : MonoBehaviour
 
     public void MenuButton()
     {
-        SceneManager.LoadScene("menu");
+        _sceneTransition.TransitionToScene("menu");
     }
 
     public void TryAgain()
     {
-        SceneManager.LoadScene("gameplay");
+        _sceneTransition.TransitionToScene("gameplay");
     }
 
     public void OpenTutorial()
