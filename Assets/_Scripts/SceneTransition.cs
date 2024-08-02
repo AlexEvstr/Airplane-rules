@@ -10,9 +10,8 @@ public class SceneTransition : MonoBehaviour
 
     private void Start()
     {
-        // Начальное состояние: черный экран прозрачный
         blackScreen.color = new Color(0, 0, 0, 0);
-        blackScreen.gameObject.SetActive(true); // Убедитесь, что черный экран активен
+        blackScreen.gameObject.SetActive(true);
     }
 
     public void TransitionToScene(string sceneName)
@@ -22,13 +21,10 @@ public class SceneTransition : MonoBehaviour
 
     private IEnumerator FadeOutAndIn(string sceneName)
     {
-        // Fade to black
         yield return StartCoroutine(FadeToBlack());
 
-        // Load new scene and wait until it's loaded
         yield return SceneManager.LoadSceneAsync(sceneName);
 
-        // Fade from black
         yield return StartCoroutine(FadeFromBlack());
     }
 
@@ -42,7 +38,7 @@ public class SceneTransition : MonoBehaviour
             blackScreen.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
-        blackScreen.color = new Color(0, 0, 0, 1); // Установите полностью черный цвет в конце
+        blackScreen.color = new Color(0, 0, 0, 1);
     }
 
     private IEnumerator FadeFromBlack()
@@ -55,6 +51,6 @@ public class SceneTransition : MonoBehaviour
             blackScreen.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
-        blackScreen.color = new Color(0, 0, 0, 0); // Установите полностью прозрачный цвет в конце
+        blackScreen.color = new Color(0, 0, 0, 0);
     }
 }
