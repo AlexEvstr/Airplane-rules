@@ -6,7 +6,7 @@ public class WaitingManager : MonoBehaviour
 {
     private void Start()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         StartCoroutine(LoadMenuScene());
     }
 

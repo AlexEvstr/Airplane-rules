@@ -5,6 +5,7 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] private GameObject _musicOn;
     [SerializeField] private GameObject _musicOff;
     [SerializeField] private GameObject _mainPopup;
+    [SerializeField] private GameObject _onBoard;
     [SerializeField] private GameObject _settignsPopup;
     [SerializeField] private GameObject _levelsPopup;
     [SerializeField] private GameObject _tutorialPopup;
@@ -14,6 +15,12 @@ public class MenuButtonController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+
+        if (PlayerPrefs.GetInt("OnBoardShow", 0) == 0)
+        {
+            _onBoard.SetActive(true);
+        }
+
         _audioSource = GetComponent<AudioSource>();
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         AudioListener.volume = PlayerPrefs.GetFloat("music", 1);
@@ -27,6 +34,12 @@ public class MenuButtonController : MonoBehaviour
             _musicOff.SetActive(true);
             _musicOn.SetActive(false);
         }
+    }
+
+    public void CloseOnBoard()
+    {
+        _onBoard.SetActive(false);
+        PlayerPrefs.SetInt("OnBoardShow", 1);
     }
 
     public void OffMusic()

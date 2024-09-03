@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMusicController : MonoBehaviour
 {
-    [SerializeField] private GameObject _musicOn;
-    [SerializeField] private GameObject _musicOff;
+    [SerializeField] private Image _musicOn;
+    [SerializeField] private Image _musicOff;
     [SerializeField] private AudioClip _clickSound;
     [SerializeField] private AudioClip _trueSound;
     [SerializeField] private AudioClip _falseSound;
@@ -19,28 +20,27 @@ public class GameMusicController : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("music", 1);
         if (AudioListener.volume == 1)
         {
-            _musicOn.SetActive(true);
-            _musicOff.SetActive(false);
+            //_musicOn.SetActive(true);
+            _musicOff.color = new Color(1, 1, 1, 1);
         }
         else
         {
-            _musicOff.SetActive(true);
-            _musicOn.SetActive(false);
+            _musicOn.color = new Color(1, 1, 1, 0.4f);
         }
     }
 
     public void OffMusic()
     {
-        _musicOn.SetActive(false);
-        _musicOff.SetActive(true);
+        _musicOn.color = new Color(1, 1, 1, 0.4f); 
+        _musicOff.color = new Color(1, 1, 1, 1);
         AudioListener.volume = 0;
         PlayerPrefs.SetFloat("music", 0);
     }
 
     public void OnMusic()
     {
-        _musicOn.SetActive(true);
-        _musicOff.SetActive(false);
+        _musicOn.color = new Color(1, 1, 1, 1);
+        _musicOff.color = new Color(1, 1, 1, 0.4f);
         AudioListener.volume = 1;
         PlayerPrefs.SetFloat("music", 1);
     }

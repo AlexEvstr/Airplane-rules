@@ -9,16 +9,21 @@ public class TiltControl : MonoBehaviour
 
     void Start()
     {
-        initialTilt = Input.acceleration.y;
+        initialTilt = Input.acceleration.x;
     }
 
     void Update()
     {
-        float tilt = Input.acceleration.y - initialTilt;
-        Vector3 newPosition = transform.position + Vector3.up * tilt * speed * Time.deltaTime;
+        if (PlaneDetector.CanMovePlane)
+        {
+            float tilt = Input.acceleration.x - initialTilt;
 
-        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+            // Если наклон влево (отрицательное значение), самолет поднимается. Если вправо (положительное значение), самолет опускается.
+            Vector3 newPosition = transform.position + Vector3.up * -tilt * speed * Time.deltaTime;
 
-        transform.position = newPosition;
+            newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+
+            transform.position = newPosition;
+        }
     }
 }

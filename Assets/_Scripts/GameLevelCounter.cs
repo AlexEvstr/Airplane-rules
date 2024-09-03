@@ -17,7 +17,7 @@ public class GameLevelCounter : MonoBehaviour
         _gameMusicController = GetComponent<GameMusicController>();
         LevelCurrent = PlayerPrefs.GetInt("LevelCurrent", 1);
         _scoreToWin = LevelCurrent * 2;
-        _currentLevelText.text = $"LEVEL {LevelCurrent} \n COMPLETED";
+        _currentLevelText.text = $"{LevelCurrent}";
         _resultText.text = $"{_score}/{_scoreToWin}";
     }
 
@@ -34,6 +34,7 @@ public class GameLevelCounter : MonoBehaviour
     public void IncreaseLevelIndex()
     {
         _victory.SetActive(true);
+        PlaneDetector.CanMovePlane = false;
         _gameMusicController.WinSound();
         LevelCurrent++;
         int bestLevel = PlayerPrefs.GetInt("LevelBest", 1);

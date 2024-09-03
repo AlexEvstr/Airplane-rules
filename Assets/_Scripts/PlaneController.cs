@@ -1,34 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaneController : MonoBehaviour
 {
-    private Touch _touch;
-    private float _movementSpeed = 0.005f;
-    private float _smooth = 5.0f;
-    private float _tiltAroundZ;
-    public float minY = -4.5f;
-    public float maxY = 4.5f;
+    [SerializeField] private FixedJoystick _fixedJoystick;
+    [SerializeField] private Transform _plane;
+    private float speed = 5f;
+    private float minY = -4.5f;
+    private float maxY = 4.5f;
 
-    private void Update()
+    public void Update()
     {
-        if (Input.touchCount > 0)
+        if (PlaneDetector.CanMovePlane)
         {
-            _touch = Input.GetTouch(0);
-            _tiltAroundZ = _touch.deltaPosition.y;
+            float verticalInput = _fixedJoystick.Vertical;
 
-            if (_touch.phase == TouchPhase.Moved)
-            {
-                Vector2 newPosition = new Vector2(transform.position.x, transform.position.y + _touch.deltaPosition.y * _movementSpeed);
-                newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
-                transform.position = newPosition;
-            }
-        }
-        else
-        {
-            _tiltAroundZ = 0;
-        }
+            Vector3 direction = new Vector3(0, verticalInput, 0).normalized;
 
-        Quaternion target = Quaternion.Euler(0, 0, _tiltAroundZ);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * _smooth);
+            _plane.position += direction * speed * Time.deltaTime;
+
+            _plane.position = new Vector3(
+                _plane.position.x,
+                Mathf.Clamp(_plane.position.y, minY, maxY),
+                _plane.position.z
+            );
+        }
     }
 }

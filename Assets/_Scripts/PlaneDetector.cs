@@ -15,11 +15,15 @@ public class PlaneDetector : MonoBehaviour
 
     [SerializeField] private GameObject _correct;
     [SerializeField] private GameObject _wrong;
-    [SerializeField] private GameObject _portal;
+    [SerializeField] private GameObject _goodEffect;
+    [SerializeField] private GameObject _badEffect;
+    [SerializeField] private GameObject _heartEffect;
     [SerializeField] private GameObject _gameOver;
     [SerializeField] private GameLevelCounter _gameLevelCounter;
     [SerializeField] private CameraShake _cameraShakewithFade;
     [SerializeField] private GameMusicController _gameMusicController;
+
+    public static bool CanMovePlane;
 
     private List<string> _aArticle = new List<string>
     {
@@ -53,6 +57,7 @@ public class PlaneDetector : MonoBehaviour
 
     private void Start()
     {
+        CanMovePlane = true;
         NewQuestion();
     }
 
@@ -62,10 +67,20 @@ public class PlaneDetector : MonoBehaviour
         {
             if (_aArticle.Contains(_questionText.text))
             {
+                GameObject goodEffect = Instantiate(_goodEffect);
+                goodEffect.transform.position = collision.gameObject.transform.position;
+                Destroy(goodEffect, 2.0f);
                 StartCoroutine(ShowCorrect());
             }
             else
             {
+                GameObject badEffect = Instantiate(_badEffect);
+                badEffect.transform.position = collision.gameObject.transform.position;
+                Destroy(badEffect, 2.0f);
+
+                GameObject heartEffect = Instantiate(_heartEffect);
+                heartEffect.transform.position = new Vector2(-7.0f, 1.5f);
+                Destroy(heartEffect, 2.0f);
                 MinusHeart();
                 StartCoroutine(ShowWrong());
             }
@@ -76,10 +91,21 @@ public class PlaneDetector : MonoBehaviour
         {
             if (_anArticle.Contains(_questionText.text))
             {
+                GameObject goodEffect = Instantiate(_goodEffect);
+                goodEffect.transform.position = collision.gameObject.transform.position;
+                Destroy(goodEffect, 2.0f);
                 StartCoroutine(ShowCorrect());
             }
             else
             {
+                GameObject badEffect = Instantiate(_badEffect);
+                badEffect.transform.position = collision.gameObject.transform.position;
+                Destroy(badEffect, 2.0f);
+
+                GameObject heartEffect = Instantiate(_heartEffect);
+                heartEffect.transform.position = new Vector2(-7.0f, 1.5f);
+                Destroy(heartEffect, 2.0f);
+
                 MinusHeart();
                 StartCoroutine(ShowWrong());
             }
@@ -90,7 +116,7 @@ public class PlaneDetector : MonoBehaviour
 
     private void NewQuestion()
     {
-        _question.transform.position = new Vector2(12, 0);
+        _question.transform.position = new Vector2(15, 0);
         int questionIndex = Random.Range(0, _questions.Length);
         _questionText.text = _questions[questionIndex];
 
@@ -153,13 +179,10 @@ public class PlaneDetector : MonoBehaviour
 
     private IEnumerator GameOverBehavior()
     {
-        GameObject portal = Instantiate(_portal);
-        portal.transform.position = new Vector3(0, -5, 0);
-        QuestionMovement.QuestionSpeed = 0;
+        QuestionMovement.QuestionSpeed = 0  ;
         yield return new WaitForSeconds(2.5f);
         _gameMusicController.LoseSound();
-        Destroy(portal);
         _gameOver.SetActive(true);
-        //Time.timeScale = 0;
+        CanMovePlane = false;
     }
 }

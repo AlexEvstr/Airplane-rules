@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GameControl : MonoBehaviour
 {
+    [SerializeField] private GameObject _joystick;
+
     private void OnEnable()
     {
         string controlType = PlayerPrefs.GetString("ControlType", "Tilt");
@@ -11,6 +13,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            _joystick.SetActive(true);
             GetComponent<PlaneController>().enabled = true;
         }
     }

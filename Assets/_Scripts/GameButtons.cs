@@ -20,11 +20,13 @@ public class GameButtons : MonoBehaviour
     public void PauseGame()
     {
         _pause.SetActive(true);
+        PlaneDetector.CanMovePlane = false;
     }
 
     public void ResumeGame()
     {
         _pause.SetActive(false);
+        PlaneDetector.CanMovePlane = true;
     }
 
     public void MenuButton()
